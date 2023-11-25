@@ -11,28 +11,28 @@ def point(user_choice,bot_choice):
     global bot_points
     global user_points
     if(user_choice=='rock' and bot_choice=='paper'):
-        bot_points=bot_points+1
+        bot_points+=1
         print("Bot gets a point")
     elif(user_choice=='rock' and bot_choice=='scissors'):
-        user_points=+user_points+1
+        user_points+=1
         print("You get a point")
     elif(user_choice=='paper' and bot_choice=='rock'):
-        user_points=+user_points+1
+        user_points+=1
         print("You get a point")
     elif(user_choice=='paper' and bot_choice=='scissors'):
-        bot_points=bot_points+1
+        bot_points+=1
         print("Bot gets a point")
     elif(user_choice=='scissors' and bot_choice=='rock'):
-        bot_points=bot_points+1
+        bot_points+=1
         print("Bot gets a point")
     elif(user_choice=='scissors' and bot_choice=='paper'):
-        user_points=+user_points+1
+        user_points+=1
         print("You get a point")
     else:
         print("No points")
 
 i=1
-while(i<=5):
+for i in range(5):
     print("----------------------------")
     print("1.ROCK\n2.PAPER\n3.SCISSOR\n")
     while(True):
@@ -47,7 +47,6 @@ while(i<=5):
     point(choices[user_choice-1],bot_choice)
     print("Your Score : ",user_points)
     print("Bot Score : ",bot_points)
-    i+=1
 
 print("\n----------------------------")
 if(user_points>bot_points):
@@ -56,3 +55,4 @@ elif(user_points<bot_points):
     print("You lost, better luck next time")
 else:
     print("It's a draw")
+print("----------------------------")
